@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:focusable="true"
+              android:background="@color/color_cccccc"
+              android:weightSum="1">
+
+
+    <edu.sdust.insapp.utils.MyVisualView
+        android:layout_height="230dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/fft_view"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></edu.sdust.insapp.utils.MyVisualView>
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="2.25dp"
+        android:background="#fa7829"
+        android:layout_below="@+id/fft_view"/>
+    <TextView
+        android:id="@+id/close_characteristic_pop"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:layout_below="@id/line4"
+        style="@style/buttonStyle"
+        android:background="@drawable/deviceinfobutton"
+
+        android:text="关闭"/>
+</RelativeLayout>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.InsSecDispatchActivity"
+    tools:showIn="@layout/activity_ins_sec_dispatch">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="调度派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_dispatchtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="调度派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="派工单状态"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_orderstatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="待二次派工"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="巡检路线"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_route"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="日常巡检线路0线"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="二次派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_secdispatchtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="二次派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="系统用户"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="选择系统用户"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="人 员"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_staff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="选择人员"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_cisd_staff"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingLeft="32dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="安全危害分析"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_analysis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="选择安全危害分析"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_cisd_analysis"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingLeft="32dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="安全措施"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_cisd_measure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text="选择安全措施"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_cisd_measure"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingLeft="32dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="派工单备注"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_cisd_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="4"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:padding="2dp"
+                android:gravity="start|top"
+                android:background="@drawable/text_view_border"
+                android:hint="派工单备注"
+                android:textSize="18sp"
+                android:textColor="#837e7e"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

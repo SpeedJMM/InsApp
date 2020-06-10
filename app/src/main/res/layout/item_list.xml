@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="8dp"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="end">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/group_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:text="标题"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="69dp"
+                            android:layout_height="20dp"
+                            android:text="工号" />
+
+                        <TextView
+                            android:id="@+id/eqpt_task"
+                            android:layout_width="249dp"
+                            android:layout_height="30dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="123456"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="14sp"
+                            android:layout_weight="0.99" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="1dp">
+                        <TextView
+                            android:layout_width="69dp"
+                            android:layout_height="20dp"
+                            android:text="工号1"/>
+                        <TextView
+                            android:id="@+id/eqpt_task1"
+                            android:layout_width="249dp"
+                            android:layout_height="20dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="45678"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="14sp"
+                            android:layout_weight="0.99" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="1dp">
+                        <TextView
+                            android:layout_width="69dp"
+                            android:layout_height="20dp"
+                            android:text="工号2"/>
+                        <TextView
+                            android:id="@+id/eqpt_task2"
+                            android:layout_width="249dp"
+                            android:layout_height="20dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="123456"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="14sp"
+                            android:layout_weight="0.99" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

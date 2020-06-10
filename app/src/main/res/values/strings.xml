@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">维保吧</string>
+
+    <!--InspectionActivity-->
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_ins">巡检</string>
+    <string name="title_upload">上传</string>
+    <string name="title_account">账号</string>
+    <string name="password">密码</string>
+
+    <string name="view_equipment_list"><u>查看</u></string>
+    <string name="label_order_number">工单号：</string>
+    <string name="label_workers">人员：</string>
+    <string name="label_ins_route">巡检路线：</string>
+    <string name="label_security">安全措施与安全分析：</string>
+    <string name="label_dispatch_time">调度派工时间：</string>
+    <string name="label_secondary_dispatch_time">班组长派工时间：</string>
+    <string name="btn_start_ins">开始巡检</string>
+    <string name="btn_upload_data">上传数据</string>
+    <string name="btn_register">登记</string>
+    <string name="btn_receive">接受</string>
+    <string name="btn_resurvey">重测</string>
+    <string name="btn_cancel">取 消</string>
+    <string name="view_title">设备信息</string>
+    <string name="btn_history_data">历史数据</string>
+    <string name="btn_view">查 看</string>
+    <string name="btn_save">保 存</string>
+    <string name="btn_clean">清 空</string>
+    <string name="btn_save_and_back">保存并返回</string>
+    <string name="btn_save_and_next">保存并进入下一条</string>
+    <string name="btn_survey">测量</string>
+    <string name="problem_find_time">问题发现时间：</string>
+    <string name="problem_description">问题描述：</string>
+    <string name="problem_appearance">问题现象：</string>
+    <string name="problem_appearance1">专业：</string>
+    <string name="view_problem_appearance">查看问题现象</string>
+    <string name="problem_part">问题部位：</string>
+    <string name="view_problem_part">查看问题部位</string>
+    <string name="pictures">照片：</string>
+    <string name="process_mode">处理方式：</string>
+    <string name="rb_locale">现场处理</string>
+    <string name="rb_feedback">反馈调度</string>
+    <string name="btn_submit">提交</string>
+    <string name="problem_address">问题发现地点：</string>
+    <string name="btn_delete">删 除</string>
+    <string name="btn_change_to_charts">切换到折线图</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="string_me_frag_setting">系统设置</string>
+    <string name="tv_ggestme_fragment_su">用户反馈</string>
+    <string name="tv_me_frag_message">系统升级</string>
+    <string name="tv_me_fragment_add">用户信息</string>
+    <string name="string_me_frag_loginout">注销</string>
+    <string name="string_frag_me_video">添加视频</string>
+    <string name="string_me_frag_mearct">我的文章</string>
+    <string name="string_me_frag_mevideo">我的视频</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="text_username">账号</string>
+    <string name="btn_login">登 录</string>
+    <string name="ins_order_info">工单信息</string>
+    <string name="tabitem_left">设备信息</string>
+    <string name="tabitem_right">问题信息</string>
+    <string name="device_list">设备列表</string>
+    <string name="problem_list">问题列表</string>
+    <string name="btn_skip">跳 过</string>
+    <string name="choose_device">设备</string>
+    <string name="choose_non_device">非设备</string>
+    <string name="bluetooth_text">蓝牙：</string>
+    <string name="non_connection">未连接</string>
+    <string name="btn_connect">连接</string>
+    <string name="cb_remember">记住密码</string>
+    <string name="title_activity_problem_detail">ProblemDetailActivity</string>
+    <!--<string name="BASE_URL">http://123.56.221.97:8080/pet-equ-mai-sys</string>-->
+    <string name="history_data_title">历史数据</string>
+    <string name="temperature">温度</string>
+    <string name="acceleration">加速度</string>
+    <string name="speed">速度</string>
+    <string name="vibration">位移</string>
+    <string name="insResult">巡检结果</string>
+    <string name="remarks">备注</string>
+    <string name="deviceIdAndDate">设备位号与日期</string>
+    <string name="btn_oneWeekData">查询前一周</string>
+    <string name="btn_oneMonthData">查询前一月</string>
+    <string name="non_choose">未选择</string>
+    <string name="device_id">设备ID：</string>
+    <string name="hint">正在加载数据</string>
+    <string name="problem_position">问题发现地点：</string>
+    <string name="btn_modify">修 改</string>
+    <string name="title_activity_eqpt_repair_dispatch">设备维修派工单</string>
+    <string name="title_activity_non_eqpt_repair_dispatch">非设备维修派工单</string>
+    <string name="title_activity_overtime_record">各部门加班人员登记</string>
+    <string name="title_activity_keep_work_order_edit">KeepWorkOrderEditActivity</string>
+    <string name="title_activity_ins_sec_dispatch">巡检二次派工</string>
+    <string name="title_activity_ins_dispatch">巡检派工</string>
+</resources>

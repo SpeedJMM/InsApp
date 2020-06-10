@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_safety_hazard_analysis_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="0dp"
+        android:textSize="20sp"
+        android:background="@color/title_color"
+        android:text="安全危害分析"
+        android:gravity="center"
+        android:textColor="@color/title_text_color"/>
+
+    <ListView
+        android:id="@+id/listview_safety_hazard_analysis_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

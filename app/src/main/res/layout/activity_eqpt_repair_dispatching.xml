@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_erd_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="二次派工"
+        style="@style/titleStyle"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="调度派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_erd_dispatchtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="调度派工时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="派工单状态"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_erd_orderstatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="待二次派工"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="派工单备注："
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_erd_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="5"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:padding="2dp"
+                android:gravity="start|top"
+                android:background="@drawable/text_view_border"
+                android:hint="派工单备注"
+                android:textSize="20sp"
+                android:textColor="#837e7e"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="人员"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_erd_staff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="选择人员"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_erd_staff"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingLeft="30dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="安全危害分析"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_erd_analysis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="选择安全危害分析"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_erd_analysis"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="安全措施"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_erd_measure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="选择安全措施"
+                    android:textSize="20sp"
+                    android:textColor="#4C80E3"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_erd_measure"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="70dp"
+                android:gravity="right">
+                <Button
+                    android:id="@+id/btn_erd_submit"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="#EEE685"
+                    android:text="派 工"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="18dp" />
+
+                <Button
+                    android:id="@+id/btn_erd_cancel"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="#EEE685"
+                    android:text="@string/btn_cancel"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

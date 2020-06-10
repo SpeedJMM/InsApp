@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/radiobutton_data_key"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:maxLines="2"
+        android:gravity="left|center_vertical"
+        android:textColor="#b8000000"
+        android:text="变压器瓷套有无破损、有无裂缝"/>
+    <!--<TextView-->
+        <!--android:layout_width="10dp"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <RadioGroup
+        android:id="@+id/radiobutton_data_rg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radiobutton_data_tvalue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是是是是是"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textColor="#837e7e"/>
+        <RadioButton
+            android:id="@+id/radiobutton_data_fvalue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="否否否否否"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textColor="#837e7e"/>
+    </RadioGroup>
+
+</LinearLayout>

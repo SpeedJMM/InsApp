@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_nept_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="非设备问题任务"
+        style="@style/titleStyle"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="问题地点"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_nept_wtdd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="问题地点"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="问题描述"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_nept_wtms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="问题描述"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="故障处理措施"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <Spinner
+                    android:id="@+id/spinner_nept_gzclcs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="任务开始时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_nept_taskstart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/text_view_border"
+                    android:gravity="center"
+                    android:text="2019-07-12"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="任务结束时间"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <TextView
+                    android:id="@+id/tv_nept_taskend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/text_view_border"
+                    android:gravity="center"
+                    android:text="2019-07-16"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_800"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="是否完成"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_blank_600"/>
+
+                <RadioGroup
+                    android:id="@+id/rg_nept_complete"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+                    <RadioButton
+                        android:id="@+id/rb_nept_positive"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="是"
+                        android:textSize="20sp"
+                        android:textColor="@color/color_text_blank_800"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_nept_negative"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="否"
+                        android:textSize="20sp"
+                        android:textColor="@color/color_text_blank_800"/>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_nept_taskremark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="5"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:padding="2dp"
+                android:gravity="start|top"
+                android:background="@drawable/text_view_border"
+                android:hint="任务完成备注"
+                android:textSize="20sp"
+                android:textColor="#837e7e"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="70dp"
+                android:gravity="right">
+                <Button
+                    android:id="@+id/btn_nept_submit"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="#EEE685"
+                    android:text="@string/btn_save"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="18dp" />
+
+                <Button
+                    android:id="@+id/btn_nept_cancel"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="#EEE685"
+                    android:text="@string/btn_cancel"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

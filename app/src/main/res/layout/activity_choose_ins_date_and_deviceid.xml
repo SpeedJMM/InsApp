@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sdust.insapp.activity.ChooseInsDateAndDeviceidActivity">
+
+    <Button
+        android:id="@+id/btn_choose_ins_date_and_deviceid_select"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshape"
+        android:text="手动查询"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_ins_date_and_deviceid_oneweek" />
+
+    <!--<Button-->
+        <!--android:id="@+id/btn_choose_ins_date_and_deviceid_one"-->
+        <!--style="@style/buttonStyle"-->
+        <!--android:layout_width="368dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="@drawable/buttonshape"-->
+        <!--android:text="@string/btn_oneMonthData"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/btn_choose_ins_date_and_deviceid_oneweek" />-->
+
+    <TextView
+        android:id="@+id/tv_choose_ins_date_and_deviceid_title"
+        style="@style/titleStyle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="0dp"
+        android:text="@string/deviceIdAndDate"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autotv_choose_ins_date_and_deviceid_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入设备位号"
+        android:enabled="false"
+        android:completionThreshold="1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_choose_ins_date_and_deviceid_title"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_choose_ins_date_and_deviceid_oneweek"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/btn_oneWeekData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autotv_choose_ins_date_and_deviceid_id" />
+
+    <Button
+        android:id="@+id/btn_choose_ins_date_and_deviceid_onemonth"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/btn_oneMonthData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_ins_date_and_deviceid_oneweek" />
+
+    <EditText
+        android:id="@+id/et_choose_ins_date_and_deviceid_start_time"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="开始时间"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_ins_date_and_deviceid_onemonth" />
+
+    <EditText
+        android:id="@+id/et_choose_ins_date_and_deviceid_end_time"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="结束时间"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_ins_date_and_deviceid_onemonth" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="至"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_choose_ins_date_and_deviceid_select"
+        app:layout_constraintLeft_toRightOf="@+id/et_choose_ins_date_and_deviceid_start_time"
+        app:layout_constraintRight_toLeftOf="@+id/et_choose_ins_date_and_deviceid_end_time"
+        app:layout_constraintTop_toTopOf="@+id/et_choose_ins_date_and_deviceid_start_time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

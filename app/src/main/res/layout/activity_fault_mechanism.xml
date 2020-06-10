@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_fault_mechanism_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="0dp"
+        android:textSize="20sp"
+        android:background="@color/title_color"
+        android:text="故障机理"
+        android:gravity="center"
+        android:textColor="@color/title_text_color"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="7dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listview_fault_mechanism_firstlevel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/color_eeeeee"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listview_fault_mechanism_secondlevel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/withe"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_margin="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_goneMarginBottom="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_fault_mechanism_confirm"
+            android:layout_width="85dp"
+            android:layout_height="45dp"
+            style="@style/buttonStyle"
+            android:background="@drawable/deviceinfobutton"
+            android:text="确 定"
+            android:enabled="true"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_fault_mechanism_cancel"
+            style="@style/buttonStyle"
+            android:layout_width="85dp"
+            android:layout_height="45dp"
+            android:background="@drawable/deviceinfobutton"
+            android:enabled="true"
+            android:text="取 消" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

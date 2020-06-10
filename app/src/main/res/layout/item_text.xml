@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/tv_data_key"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="left|center_vertical"
+        android:textColor="#b8000000"
+        android:text="发现问题及处理意见" />
+    <EditText
+        android:id="@+id/tv_data_value"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#837e7e"
+        android:gravity="center_horizontal"
+        android:inputType="numberDecimal"
+        android:layout_weight="0.5"/>
+
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="#eeeeee">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:background="#FFF">
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:background="@drawable/time_view_border"
+            android:gravity="center_vertical"
+            android:hint="输入开始时间"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/black"
+            android:textScaleX="1.0"
+            android:textSize="14dp"
+            android:typeface="monospace" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="#000" />
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:background="@drawable/time_view_border"
+            android:gravity="center_vertical"
+            android:hint="输入结束时间"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/black"
+            android:textScaleX="1.0"
+            android:textSize="14dp"
+            android:typeface="monospace" />
+
+        <ImageButton
+            android:id="@+id/iv_search"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/search_72px"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:clipToPadding="true"
+            android:background="#3A3A3A">
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:descendantFocusability="blocksDescendants"
+            android:scrollbars="none">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/all_com_eqpt_repair_dis_order_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="3dp"
+                android:background="#eeeeee"
+                android:horizontalSpacing="5dp"
+                android:verticalSpacing="5dp"
+                android:numColumns="5"
+                android:columnWidth="90dp"
+                android:stretchMode="columnWidth"
+                android:dividerHeight="20dp"
+                android:divider="#00000000"
+                android:gravity="center"
+                android:focusable="false"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

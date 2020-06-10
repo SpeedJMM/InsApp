@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
+    
+    <TextView
+        android:id="@+id/tv_inspection_order_item_key"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="left|center_vertical"
+        android:textColor="#b8000000"
+        android:layout_width="0dp"
+        />
+    <TextView
+        android:id="@+id/tv_inspection_order_item_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textSize="20sp"
+        android:textColor="#837e7e"
+        android:layout_marginRight="10dp"
+        android:gravity="right|center_vertical"
+        />
+
+</LinearLayout>

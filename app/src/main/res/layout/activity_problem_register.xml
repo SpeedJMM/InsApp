@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="edu.sdust.insapp.activity.ProblemRegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_problem_register_title"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:gravity="center"
+        android:background="@color/title_color"
+        android:textColor="#000000"
+        android:text="设备问题"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/sv_problem_register_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_problem_register_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+                <TextView
+                    android:id="@+id/tv_problem_register_device_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/device_id"
+                    android:gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:layout_weight="4"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tv_problem_register_device_id_choose"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="6"
+                    android:hint="输入设备ID"
+                    android:completionThreshold="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+                <TextView
+                    android:id="@+id/tv_problem_register_time_key"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/problem_find_time"
+                    android:gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:layout_weight="4"/>
+
+                <TextView
+                    android:id="@+id/tv_problem_register_time_value"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="TextView"
+                    android:layout_weight="6"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:id="@+id/tv_problem_register_description_key"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical"
+                    android:text="@string/problem_description" />
+
+                <EditText
+                    android:id="@+id/et_problem_register_description_value"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="textMultiLine" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_problem_register_appearance"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_vertical"
+                        android:textSize="20sp"
+                        android:text="@string/problem_appearance" />
+
+                    <Spinner
+                        android:id="@+id/tv_problem_register_appearance_value"
+                        android:clickable="true"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_problem_register_appearance1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_vertical"
+                        android:text="@string/problem_appearance1"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/tv_problem_register_appearance_value1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:clickable="true" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_problem_register_problem_part"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_vertical"
+                        android:textSize="20sp"
+                        android:text="@string/problem_part" />
+
+                    <TextView
+                        android:id="@+id/tv_problem_register_view_part"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:textColor="#4C80E3"
+                        android:text="@string/view_problem_part" />
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/listview_problem_register_problem_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:scrollbars="vertical"
+                    android:cacheColorHint="#00000000"
+                    android:descendantFocusability="afterDescendants"
+                    android:dividerHeight="2dp"
+                    android:layout_alignParentTop="true" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tv_problem_register_process_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:text="@string/process_mode" />
+
+                <Spinner
+                    android:id="@+id/spinner_problem_register_method"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/tv_problem_register_pictures"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:textSize="20sp"
+                        android:gravity="center_vertical"
+                        android:text="@string/pictures" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tupian_a"
+                    android:layout_margin="1dp">
+
+                    <GridView
+                        android:id="@+id/ngiv_problem_register_choose_picture"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:columnWidth="100dp"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:horizontalSpacing="0dp"
+                        android:listSelector="@null"
+                        android:numColumns="5"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="15dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="40dp">
+
+                <Button
+                    android:id="@+id/btn_problem_register_save"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="42dp"
+                    android:background="#EEE685"
+                    android:text="@string/btn_save" />
+
+                <Button
+                    android:id="@+id/btn_problem_register_cancel"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="39dp"
+                    android:background="#EEE685"
+                    android:text="@string/btn_cancel" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!--<Button-->
+        <!--android:id="@+id/btn_problem_register_save"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:background="#EEE685"-->
+        <!--android:text="@string/btn_save"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--app:layout_constraintRight_toLeftOf="@+id/btn_problem_register_cancel"-->
+        <!--android:layout_marginRight="8dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btn_problem_register_cancel"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:background="#EEE685"-->
+        <!--android:text="@string/btn_cancel"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--app:layout_constraintRight_toRightOf="parent" />-->
+
+
+</android.support.design.widget.CoordinatorLayout>

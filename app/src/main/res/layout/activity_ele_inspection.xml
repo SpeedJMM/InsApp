@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sdust.insapp.activity.EleInspectionActivity">
+
+    <TextView
+        android:id="@+id/tv_inspection_title"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/ins_order_info"
+        style="@style/titleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ListView
+        android:id="@+id/lv_inspection_order_info"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_margin="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_inspection_title"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/btn_inspection_start"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/btn_start_ins"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/lv_inspection_order_info"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:background="@drawable/buttonshape"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/btn_inspection_upload"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:text="@string/btn_upload_data"
+        app:layout_constraintTop_toTopOf="@+id/btn_inspection_start"
+        app:layout_constraintLeft_toRightOf="@+id/btn_inspection_start"
+        android:layout_marginLeft="32dp"
+        android:background="@drawable/buttonshape"
+        android:layout_marginStart="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_nerdo_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="非设备维修二次派工"
+        style="@style/titleStyle"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_nerdo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="20sp"
+                            android:gravity="center_vertical"
+                            android:text="一般作业票" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <GridView
+                            android:visibility="gone"
+                            android:id="@+id/gv_nerdo_normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:columnWidth="100dp"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:horizontalSpacing="0dp"
+                            android:listSelector="@null"
+                            android:numColumns="5"
+                            android:stretchMode="columnWidth"
+                            android:verticalSpacing="15dp" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_nerdo_normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="20sp"
+                            android:gravity="center_vertical"
+                            android:text="特殊作业票" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <GridView
+                            android:visibility="gone"
+                            android:id="@+id/gv_nerdo_spical"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:columnWidth="100dp"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:horizontalSpacing="0dp"
+                            android:listSelector="@null"
+                            android:numColumns="5"
+                            android:stretchMode="columnWidth"
+                            android:verticalSpacing="15dp" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_nerdo_spical"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/btn_nerdo_normal"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="5"
+                        style="@style/buttonStyle"
+                        android:background="@drawable/deviceinfobutton"
+                        android:text="上传一般作业票"
+                        android:textSize="16sp"
+                        android:enabled="true"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/btn_nerdo_special"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="5"
+                        style="@style/buttonStyle"
+                        android:background="@drawable/deviceinfobutton"
+                        android:text="上传特殊作业票"
+                        android:textSize="16sp"
+                        android:enabled="true"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_nerdo_status"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@color/color_Gblue"
+                android:text="未上传作业票"
+                android:textSize="20sp"
+                android:textColor="#FFF"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_nerdo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btn_nerdo_comSec"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="#EEE685"
+                    android:text="完 工"
+                    android:textSize="18sp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:gravity="center_vertical"
+                        android:text="照片附件上传" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_nerdo_annex"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_nerdo_upload"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:background="#EEE685"
+                android:text="上 传"
+                android:textSize="18sp"
+                android:layout_gravity="right"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="70dp"
+                android:layout_marginRight="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.sdust.insapp">
+    <!-- 保持手机唤醒 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/tubiao1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/tubiao1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".activity.InsDispatchActivity"
+            android:label="@string/title_activity_ins_dispatch"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
+            android:name=".activity.InsSecDispatchActivity"
+            android:label="@string/title_activity_ins_sec_dispatch"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".activity.KeepWorkOrderEditActivity"
+            android:label="@string/title_activity_keep_work_order_edit"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".activity.OvertimeRecordActivity"
+            android:label="@string/title_activity_overtime_record"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".activity.GuaranteedOperationDetailActivity" />
+        <activity android:name=".activity.GuaranteedOperationActivity" />
+        <activity
+            android:name=".activity.NonEqptRepairDispatchActivity"
+            android:label="@string/title_activity_non_eqpt_repair_dispatch"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".activity.EqptRepairDispatchActivity"
+            android:label="@string/title_activity_eqpt_repair_dispatch"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".activity.FaultLocationActivity" />
+        <activity android:name=".activity.SafetyMeasureActivity" />
+        <activity android:name=".activity.SafetyHazardAnalysisActivity" />
+        <activity android:name=".activity.EqptRepairDispatchingActivity" />
+        <activity
+            android:name=".activity.InspectionActivity"
+            android:label="@string/title_activity_main">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".activity.DeviceListActivity"
+            android:label="DeviceListActivity" />
+        <activity android:name=".activity.DeviceInfoActivity" />
+        <activity android:name=".activity.ObservationPointActivity" />
+        <activity android:name=".activity.HistoryDataChartActivity" />
+        <activity android:name=".activity.HistoryDataGridActivity" />
+        <activity android:name=".activity.ProblemRegisterActivity" />
+        <activity android:name=".activity.UserInformationActivity" />
+        <activity android:name=".activity.queryview" />
+        <activity
+            android:name="com.netease.imageSelector.view.ImageSelectorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.netease.imageSelector.view.ImagePreviewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.netease.imageSelector.view.ImageCropActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".activity.NonProblemRegisterActivity" />
+        <activity android:name=".activity.mainView" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ProblemDetailActivity" />
+        <activity android:name=".activity.ProblemListActivity" />
+        <activity android:name=".activity.NonEqptRepairTaskProblemDetailActivity" />
+        <activity android:name=".activity.ProblemPositionsAvtivity" />
+        <activity android:name=".activity.NonProblemDetailActivity" />
+        <activity android:name=".activity.listAllViRqptRepairTaskProblemActivity" />
+        <activity android:name=".activity.EqptRepairProblemDetailActivity" />
+        <activity android:name=".activity.ProblemPositionActivity" />
+        <activity android:name=".activity.EleInspectionActivity" />
+        <activity
+            android:name=".activity.EleDeviceInfoActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.EleDeviceListActivity" />
+        <activity android:name=".activity.EqptRepairDisOrderActivity" />
+        <activity android:name=".activity.EqptProblemTaskActivity" />
+        <activity android:name=".activity.FaultMechanismActivity" />
+        <activity android:name=".activity.ImageDetailCommonActivity" />
+        <activity android:name=".activity.NonEqptRepairDispatchingActivity" />
+        <activity android:name=".activity.NonEqptRepairDisOrderActivity" />
+        <activity android:name=".activity.NonEqptProblemTaskActivity" />
+        <activity android:name=".activity.ProblemDeviceActivity" />
+        <activity android:name=".activity.EqptMonthlyTaskActivity" />
+        <activity android:name=".activity.NonEqptMonthlyTaskActivity" />
+        <activity
+            android:name=".activity.KeepWorkOrderNewActivity"
+            android:theme="@style/NoActionBar" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="111bbc043e203b26b9b3ef92675a6b30" /> <!-- android:value="111bbc043e203b26b9b3ef92675a6b30" /> 发布key -->
+        <!-- android:value="5881c4a00bed9b565ec16c6c66969381" /> 调试key -->
+        <!-- android:value="59e7902fca70456f61c02f9a556f9161" /> -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="edu.sdust.insapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver
+            android:name=".utils.DownLoadBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service android:name="com.amap.api.location.APSService" />
+        <service
+            android:name=".service.DLDeviceService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.ElecPositioningService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".service.MapService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".service.ElecUploadService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

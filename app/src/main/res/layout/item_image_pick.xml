@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="70dp"
+    android:layout_height="70dp">
+
+    <android.support.percent.PercentFrameLayout
+        app:layout_aspectRatio="100%"
+        app:layout_widthPercent="100%">
+
+        <android.support.percent.PercentFrameLayout
+            android:background="@drawable/edt_bg_stroke"
+            android:layout_gravity="center"
+            app:layout_aspectRatio="100%"
+            app:layout_widthPercent="80%">
+
+            <ImageView
+                android:id="@+id/img_item_pick"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </android.support.percent.PercentFrameLayout>
+
+
+    </android.support.percent.PercentFrameLayout>
+
+
+</android.support.percent.PercentFrameLayout>

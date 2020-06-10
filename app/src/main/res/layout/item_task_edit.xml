@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_item_content"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:text="额定值不当"
+    android:textSize="17sp"
+    android:textColor="@color/color_text_blank_800"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</TextView>

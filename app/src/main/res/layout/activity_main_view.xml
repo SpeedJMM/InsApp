@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sdust.insapp.activity.mainView"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/home_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <RadioButton
+
+                android:id="@+id/home_rb_work"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="工作"
+                android:textColor="#0099ff"
+                android:textSize="12sp"
+                android:drawableTop="@mipmap/btn_normal_work"
+                android:gravity="center"
+                android:padding="5dp"/>
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/home_rb_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="消息"
+                android:textColor="#666666"
+                android:textSize="10sp"
+                android:drawableTop="@mipmap/btn_normal_message"
+                android:gravity="center"
+                android:padding="5dp"/>
+            <RadioButton
+
+                android:id="@+id/home_rb_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="数据"
+                android:textColor="#666666"
+                android:textSize="10sp"
+                android:drawableTop="@mipmap/btn_normal_data"
+                android:gravity="center"
+                android:padding="5dp"/>
+            <RadioButton
+                android:id="@+id/home_rb_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="用户"
+                android:textColor="#666666"
+                android:textSize="10sp"
+                android:drawableTop="@mipmap/btn_normal_user"
+                android:gravity="center"
+                android:padding="5dp"/>
+        </RadioGroup>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
