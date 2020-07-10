@@ -136,7 +136,7 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_ept_gzjl"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -196,7 +196,7 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_ept_gzbw"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

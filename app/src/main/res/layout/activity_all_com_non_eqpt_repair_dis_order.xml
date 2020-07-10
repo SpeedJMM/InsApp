@@ -62,7 +62,7 @@
         android:fillViewport="true"
         android:descendantFocusability="blocksDescendants"
         android:scrollbars="none">
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/all_com_non_eqpt_repair_dis_order_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"

@@ -301,73 +301,76 @@ public class AllComNonEqptRepairDisOrderActivity extends Fragment {
                     e.printStackTrace();
                 }
 
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (false && loadCount % 2 != 0) {
-                            //分页数据加载失败
-                            recyclerViewHelper.loadError();
-                        } else if (loadCount < 50000) {
-                            String find_sql = "select * from " + DbConstant.USER_TABLE;
-                            db = helper.getReadableDatabase();
-                            Cursor cursor = db.rawQuery(find_sql, null);
-                            String Listeqptorder = UrlConstant.nonListeqptorder;
-                            String username, password;
-                            if (cursor.moveToFirst()) {
-                                username = cursor.getString(cursor.getColumnIndex("username"));
-                                password = cursor.getString(cursor.getColumnIndex("password"));
-                                Map<String, String> stringMap = new HashMap<>();
-                                stringMap.put("username", username);
-                                stringMap.put("password", password);
-                                stringMap.put("size", String.valueOf(loadCount));
-                                stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
-                                stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
-                                //Listeqptorder = UrlConstant.nonListeqptorder + "?username=" + username + "&password=" + password+"&size="+loadCount;
-                                VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
-                                    @Override
-                                    public void onSuccess(String result) {
-                                        NonEqptComDataBean nonEqptComDataBean = new Gson().fromJson(result,NonEqptComDataBean.class);
-                                        List<NonEqptComOrderBean> nonEqptComOrderBeenlist = nonEqptComDataBean.getData();
-                                        for (NonEqptComOrderBean nonEqptComOrderBean:nonEqptComOrderBeenlist){
-                                            nonEqptComOrderBeen1 =  new NonEqptComOrderBean();
-                                            nonEqptComOrderBeen1.setOvepargroupname(nonEqptComOrderBean.getOvepargroupname());
-                                            nonEqptComOrderBeen1.setNonEqptRepairTask(nonEqptComOrderBean.getNonEqptRepairTask());
-                                            nonEqptComOrderBeen1.setCompletordersubmittime(nonEqptComOrderBean.getCompletordersubmittime());
-                                            nonEqptComOrderBeen1.setViDispaStaff(nonEqptComOrderBean.getViDispaStaff());
-                                            nonEqptComOrderBeen1.setNoneqptrepairdispaorderid(nonEqptComOrderBean.getNoneqptrepairdispaorderid());
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (false && loadCount % 2 != 0) {
+                                //分页数据加载失败
+                                recyclerViewHelper.loadError();
+                            } else if (loadCount < 50000) {
+                                String find_sql = "select * from " + DbConstant.USER_TABLE;
+                                db = helper.getReadableDatabase();
+                                Cursor cursor = db.rawQuery(find_sql, null);
+                                String Listeqptorder = UrlConstant.nonListeqptorder;
+                                String username, password;
+                                if (cursor.moveToFirst()) {
+                                    username = cursor.getString(cursor.getColumnIndex("username"));
+                                    password = cursor.getString(cursor.getColumnIndex("password"));
+                                    Map<String, String> stringMap = new HashMap<>();
+                                    stringMap.put("username", username);
+                                    stringMap.put("password", password);
+                                    stringMap.put("size", String.valueOf(loadCount));
+                                    stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
+                                    stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
+                                    //Listeqptorder = UrlConstant.nonListeqptorder + "?username=" + username + "&password=" + password+"&size="+loadCount;
+                                    VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
+                                        @Override
+                                        public void onSuccess(String result) {
+                                            NonEqptComDataBean nonEqptComDataBean = new Gson().fromJson(result,NonEqptComDataBean.class);
+                                            List<NonEqptComOrderBean> nonEqptComOrderBeenlist = nonEqptComDataBean.getData();
+                                            for (NonEqptComOrderBean nonEqptComOrderBean:nonEqptComOrderBeenlist){
+                                                nonEqptComOrderBeen1 =  new NonEqptComOrderBean();
+                                                nonEqptComOrderBeen1.setOvepargroupname(nonEqptComOrderBean.getOvepargroupname());
+                                                nonEqptComOrderBeen1.setNonEqptRepairTask(nonEqptComOrderBean.getNonEqptRepairTask());
+                                                nonEqptComOrderBeen1.setCompletordersubmittime(nonEqptComOrderBean.getCompletordersubmittime());
+                                                nonEqptComOrderBeen1.setViDispaStaff(nonEqptComOrderBean.getViDispaStaff());
+                                                nonEqptComOrderBeen1.setNoneqptrepairdispaorderid(nonEqptComOrderBean.getNoneqptrepairdispaorderid());
 
-                                            nonEqptComOrderBeen1.setDispaordercontroldispatime(nonEqptComOrderBean.getDispaordercontroldispatime());
-                                            nonEqptComOrderBeen1.setDispaorderstatecode(nonEqptComOrderBean.getDispaorderstatecode());
-                                            nonEqptComOrderBeen1.setDispaorderstatename(nonEqptComOrderBean.getDispaorderstatename());
-                                            nonEqptComOrderBeen1.setDispaorderid(nonEqptComOrderBean.getDispaorderid());
-                                            nonEqptComOrderBeen1.setCompletorderid(nonEqptComOrderBean.getCompletorderid());
-                                            nonEqptComOrderBeen1.setOvepargroupid(nonEqptComOrderBean.getOvepargroupid());
-                                            nonEqptComOrderBeen1.setDispaordersecdispatime(nonEqptComOrderBean.getDispaordersecdispatime());
+                                                nonEqptComOrderBeen1.setDispaordercontroldispatime(nonEqptComOrderBean.getDispaordercontroldispatime());
+                                                nonEqptComOrderBeen1.setDispaorderstatecode(nonEqptComOrderBean.getDispaorderstatecode());
+                                                nonEqptComOrderBeen1.setDispaorderstatename(nonEqptComOrderBean.getDispaorderstatename());
+                                                nonEqptComOrderBeen1.setDispaorderid(nonEqptComOrderBean.getDispaorderid());
+                                                nonEqptComOrderBeen1.setCompletorderid(nonEqptComOrderBean.getCompletorderid());
+                                                nonEqptComOrderBeen1.setOvepargroupid(nonEqptComOrderBean.getOvepargroupid());
+                                                nonEqptComOrderBeen1.setDispaordersecdispatime(nonEqptComOrderBean.getDispaordersecdispatime());
 
-                                            data_list.add(nonEqptComOrderBeen1);
+                                                data_list.add(nonEqptComOrderBeen1);
+                                            }
+                                            listAdapter.notifyDataSetChanged();
+                                            recyclerViewHelper.loadComplete(true);
                                         }
-                                        listAdapter.notifyDataSetChanged();
-                                        recyclerViewHelper.loadComplete(true);
-                                    }
 
-                                    @Override
-                                    public void onError(VolleyError result) {
-                                    }
+                                        @Override
+                                        public void onError(VolleyError result) {
+                                        }
 
-                                    @Override
-                                    public void jsonOnSuccess(JSONObject result) {
-                                    }
-                                });
+                                        @Override
+                                        public void jsonOnSuccess(JSONObject result) {
+                                        }
+                                    });
+                                }
+                                db.close();
+                            } else {
+                                //分页数据加载成功，没有更多。即全部加载完成
+                                recyclerViewHelper.loadComplete(false);
                             }
-                            db.close();
-                        } else {
-                            //分页数据加载成功，没有更多。即全部加载完成
-                            recyclerViewHelper.loadComplete(false);
-                        }
 
-                        loadCount++;
-                    }
-                });
+                            loadCount++;
+                        }
+                    });
+                }
+
             }
         }).start();
 
@@ -384,70 +387,73 @@ public class AllComNonEqptRepairDisOrderActivity extends Fragment {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (loadCount == 1) {
-                            String find_sql = "select * from " + DbConstant.USER_TABLE;
-                            db = helper.getReadableDatabase();
-                            Cursor cursor = db.rawQuery(find_sql, null);
-                            String Listeqptorder = UrlConstant.nonListeqptorder;
-                            String username, password;
-                            if (cursor.moveToFirst()) {
-                                username = cursor.getString(cursor.getColumnIndex("username"));
-                                password = cursor.getString(cursor.getColumnIndex("password"));
-                                Map<String, String> stringMap = new HashMap<>();
-                                stringMap.put("username", username);
-                                stringMap.put("password", password);
-                                stringMap.put("size", String.valueOf(loadCount));
-                                stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
-                                stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
-                                //Listeqptorder = UrlConstant.nonListeqptorder + "?username=" + username + "&password=" + password+"&size="+loadCount;
-                                VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
-                                    @Override
-                                    public void onSuccess(String result) {
-                                        NonEqptComDataBean nonEqptComDataBean = new Gson().fromJson(result,NonEqptComDataBean.class);
-                                        List<NonEqptComOrderBean> nonEqptComOrderBeenlist = nonEqptComDataBean.getData();
-                                        for (NonEqptComOrderBean nonEqptComOrderBean:nonEqptComOrderBeenlist){
-                                            nonEqptComOrderBeen1 =  new NonEqptComOrderBean();
-                                            nonEqptComOrderBeen1.setOvepargroupname(nonEqptComOrderBean.getOvepargroupname());
-                                            nonEqptComOrderBeen1.setNonEqptRepairTask(nonEqptComOrderBean.getNonEqptRepairTask());
-                                            nonEqptComOrderBeen1.setCompletordersubmittime(nonEqptComOrderBean.getCompletordersubmittime());
-                                            nonEqptComOrderBeen1.setViDispaStaff(nonEqptComOrderBean.getViDispaStaff());
-                                            nonEqptComOrderBeen1.setNoneqptrepairdispaorderid(nonEqptComOrderBean.getNoneqptrepairdispaorderid());
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (loadCount == 1) {
+                                String find_sql = "select * from " + DbConstant.USER_TABLE;
+                                db = helper.getReadableDatabase();
+                                Cursor cursor = db.rawQuery(find_sql, null);
+                                String Listeqptorder = UrlConstant.nonListeqptorder;
+                                String username, password;
+                                if (cursor.moveToFirst()) {
+                                    username = cursor.getString(cursor.getColumnIndex("username"));
+                                    password = cursor.getString(cursor.getColumnIndex("password"));
+                                    Map<String, String> stringMap = new HashMap<>();
+                                    stringMap.put("username", username);
+                                    stringMap.put("password", password);
+                                    stringMap.put("size", String.valueOf(loadCount));
+                                    stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
+                                    stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
+                                    //Listeqptorder = UrlConstant.nonListeqptorder + "?username=" + username + "&password=" + password+"&size="+loadCount;
+                                    VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
+                                        @Override
+                                        public void onSuccess(String result) {
+                                            NonEqptComDataBean nonEqptComDataBean = new Gson().fromJson(result,NonEqptComDataBean.class);
+                                            List<NonEqptComOrderBean> nonEqptComOrderBeenlist = nonEqptComDataBean.getData();
+                                            for (NonEqptComOrderBean nonEqptComOrderBean:nonEqptComOrderBeenlist){
+                                                nonEqptComOrderBeen1 =  new NonEqptComOrderBean();
+                                                nonEqptComOrderBeen1.setOvepargroupname(nonEqptComOrderBean.getOvepargroupname());
+                                                nonEqptComOrderBeen1.setNonEqptRepairTask(nonEqptComOrderBean.getNonEqptRepairTask());
+                                                nonEqptComOrderBeen1.setCompletordersubmittime(nonEqptComOrderBean.getCompletordersubmittime());
+                                                nonEqptComOrderBeen1.setViDispaStaff(nonEqptComOrderBean.getViDispaStaff());
+                                                nonEqptComOrderBeen1.setNoneqptrepairdispaorderid(nonEqptComOrderBean.getNoneqptrepairdispaorderid());
 
-                                            nonEqptComOrderBeen1.setDispaordercontroldispatime(nonEqptComOrderBean.getDispaordercontroldispatime());
-                                            nonEqptComOrderBeen1.setDispaorderstatecode(nonEqptComOrderBean.getDispaorderstatecode());
-                                            nonEqptComOrderBeen1.setDispaorderstatename(nonEqptComOrderBean.getDispaorderstatename());
-                                            nonEqptComOrderBeen1.setDispaorderid(nonEqptComOrderBean.getDispaorderid());
-                                            nonEqptComOrderBeen1.setCompletorderid(nonEqptComOrderBean.getCompletorderid());
-                                            nonEqptComOrderBeen1.setOvepargroupid(nonEqptComOrderBean.getOvepargroupid());
-                                            nonEqptComOrderBeen1.setDispaordersecdispatime(nonEqptComOrderBean.getDispaordersecdispatime());
+                                                nonEqptComOrderBeen1.setDispaordercontroldispatime(nonEqptComOrderBean.getDispaordercontroldispatime());
+                                                nonEqptComOrderBeen1.setDispaorderstatecode(nonEqptComOrderBean.getDispaorderstatecode());
+                                                nonEqptComOrderBeen1.setDispaorderstatename(nonEqptComOrderBean.getDispaorderstatename());
+                                                nonEqptComOrderBeen1.setDispaorderid(nonEqptComOrderBean.getDispaorderid());
+                                                nonEqptComOrderBeen1.setCompletorderid(nonEqptComOrderBean.getCompletorderid());
+                                                nonEqptComOrderBeen1.setOvepargroupid(nonEqptComOrderBean.getOvepargroupid());
+                                                nonEqptComOrderBeen1.setDispaordersecdispatime(nonEqptComOrderBean.getDispaordersecdispatime());
 
-                                            data_list.add(nonEqptComOrderBeen1);
+                                                data_list.add(nonEqptComOrderBeen1);
+                                            }
+                                            listAdapter.notifyDataSetChanged();
+                                            recyclerViewHelper.loadComplete(true);
                                         }
-                                        listAdapter.notifyDataSetChanged();
-                                        recyclerViewHelper.loadComplete(true);
-                                    }
 
-                                    @Override
-                                    public void onError(VolleyError result) {
-                                    }
+                                        @Override
+                                        public void onError(VolleyError result) {
+                                        }
 
-                                    @Override
-                                    public void jsonOnSuccess(JSONObject result) {
-                                    }
-                                });
+                                        @Override
+                                        public void jsonOnSuccess(JSONObject result) {
+                                        }
+                                    });
+                                }
+                                db.close();
+                                //首次加载数据成功
+                            } else if (loadCount ==0) {
+                                //首次数据记载失败
+                                recyclerViewHelper.loadError();
                             }
-                            db.close();
-                            //首次加载数据成功
-                        } else if (loadCount ==0) {
-                            //首次数据记载失败
-                            recyclerViewHelper.loadError();
+                            loadCount++;
                         }
-                        loadCount++;
-                    }
-                });
+                    });
+                }
+
             }
         }).start();
     }

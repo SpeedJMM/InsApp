@@ -196,7 +196,8 @@ public class NonEqptMonthlyTaskActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 final String url = UrlConstant.updatenonEqptRepairTaskComAppURL;
-                NonEqptRepairTaskCompletSituationBean parameter = new NonEqptRepairTaskCompletSituationBean();
+                NonEqptRepairTaskCompletSituationTotalBean parameter = new NonEqptRepairTaskCompletSituationTotalBean();//
+                parameter.setMonthlynoneqptrepairtaskid(viNonEqptRepairTaskMonTaskTotalBean.getMonthlynoneqptrepairtaskid());//
                 parameter.setNoneqptrepairtaskcompletsituationid(viNonEqptRepairTaskMonTaskTotalBean.getNoneqptrepairtaskcompletsituationid());
                 parameter.setNoneqptrepaircompletorderid(viNonEqptRepairTaskMonTaskTotalBean.getNoneqptrepaircompletorderid());
                 parameter.setNoneqptrepairtaskid(viNonEqptRepairTaskMonTaskTotalBean.getNoneqptrepairtaskid());
@@ -310,8 +311,20 @@ public class NonEqptMonthlyTaskActivity extends AppCompatActivity {
         });
     }
 
+    private class NonEqptRepairTaskCompletSituationTotalBean extends NonEqptRepairTaskCompletSituationBean {//
+        private Integer monthlynoneqptrepairtaskid;
+
+        public Integer getMonthlynoneqptrepairtaskid() {
+            return monthlynoneqptrepairtaskid;
+        }
+
+        public void setMonthlynoneqptrepairtaskid(Integer monthlynoneqptrepairtaskid) {
+            this.monthlynoneqptrepairtaskid = monthlynoneqptrepairtaskid;
+        }
+    }
+
     private void initData () {
-        title.setText("非设备月度任务");
+        title.setText("非设备周计划任务");
         wtdd.setText(viNonEqptRepairTaskMonTaskTotalBean.getMonthlynoneqptrepairtaskplace());
         wtms.setText(viNonEqptRepairTaskMonTaskTotalBean.getMonthlynoneqptrepairtaskabs());
         if (viNonEqptRepairTaskMonTaskTotalBean.getNoneqptrepairtaskstarttime() != null) {

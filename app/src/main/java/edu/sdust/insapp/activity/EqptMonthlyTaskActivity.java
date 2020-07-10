@@ -277,8 +277,9 @@ public class EqptMonthlyTaskActivity extends AppCompatActivity {
 //                    return;
 //                }
 
-                String url = UrlConstant.updateEqptRepairTaskComAppURL;
-                EqptRepairTaskCompletSituationBean parameter = new EqptRepairTaskCompletSituationBean();
+                String url = UrlConstant.updateEqptRepairTaskCom1AppURL;//
+                EqptRepairTaskCompletSituationTotalBean parameter = new EqptRepairTaskCompletSituationTotalBean();//
+                parameter.setMonthlyeqptrepairtaskid(viEqptRepairTaskMonthlyTotalBean.getMonthlyeqptrepairtaskid());//
                 parameter.setEqptrepairtaskcompletsituationid(viEqptRepairTaskMonthlyTotalBean.getEqptrepairtaskcompletsituationid());
                 parameter.setEqptrepaircompletorderid(viEqptRepairTaskMonthlyTotalBean.getEqptrepaircompletorderid());
                 parameter.setEqptrepairtaskid(viEqptRepairTaskMonthlyTotalBean.getEqptrepairtaskid());
@@ -498,6 +499,18 @@ public class EqptMonthlyTaskActivity extends AppCompatActivity {
         });
     }
 
+    private class EqptRepairTaskCompletSituationTotalBean  extends EqptRepairTaskCompletSituationBean {//
+        private Integer monthlyeqptrepairtaskid;
+
+        public Integer getMonthlyeqptrepairtaskid() {
+            return monthlyeqptrepairtaskid;
+        }
+
+        public void setMonthlyeqptrepairtaskid(Integer monthlyeqptrepairtaskid) {
+            this.monthlyeqptrepairtaskid = monthlyeqptrepairtaskid;
+        }
+    }
+
     private class ViEqptProblemFaultPosition {
         private Integer eqptproblemid;
         private Integer eqptproblemfaultpositionid;
@@ -577,7 +590,7 @@ public class EqptMonthlyTaskActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        title.setText("设备月度任务");
+        title.setText("设备周计划任务");
         layout_gzbw.setVisibility(View.GONE);
         list_gzbw.setVisibility(View.GONE);
         sbwh.setText(viEqptRepairTaskMonthlyTotalBean.getAttribvalue());

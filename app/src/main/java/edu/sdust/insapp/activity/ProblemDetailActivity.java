@@ -505,6 +505,7 @@ public class ProblemDetailActivity extends AppCompatActivity implements MyAdapte
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // 接收图片选择器返回结果，更新所选图片集合
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_PREVIEW || requestCode == REQUEST_IMAGE) {
             ArrayList<String> newFiles = data.getStringArrayListExtra(OUTPUT_LIST);
             if (newFiles != null) {

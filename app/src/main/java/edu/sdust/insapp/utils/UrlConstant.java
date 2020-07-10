@@ -11,7 +11,7 @@ public class UrlConstant {
     //public static String BASE_URL = "http://192.168.137.1:8080/pet-equ-mai-sys";
     //public static String BASE_URL = "http://192.168.81.83:8080/pet-equ-mai-sys";
     //public static String BASE_URL = "http://192.168.0.207:8080/pet-equ-mai-sys";//
-    //public static String BASE_URL = "http://192.168.0.138:8080/pet-equ-mai-sys";//
+    //public static String BASE_URL = "http://192.168.0.208:8080/pet-equ-mai-sys";//
     //public static String BASE_URL = "http://192.168.81.97:8080/pet-equ-mai-sys";
     //public static String BASE_URL = "http://192.168.81.77:8080/pet-equ-mai-sys";
     //public static String BASE_URL="http://192.168.23.1:8080/pet-equ-mai-sys";
@@ -84,5 +84,6 @@ public class UrlConstant {
     public static final String getDisStaffURL = BASE_URL+"/InsSecDispatch/getDisStaff";//巡检二次派工读取派工人员
     public static final String getSelAnalysisAndMeasURL = BASE_URL+"/InsSecDispatch/getSelAnalysisAndMeas";//巡检二次派工读取安全措施和安全分析
     public static final String sendSecInsOrderAppURL = BASE_URL+"/app/ins/sendSecInsOrderApp";//巡检派工单二次派工
+    public static final String updateEqptRepairTaskCom1AppURL = BASE_URL + "/app/eqptRepairDisOrderList/updateEqptRepairTaskCom1App";//保存周计划任务
 //    public static final String problemscenetreatmentmodeURL = BASE_URL+"/NotEquipmentProblem/ListAllInspproblemscenetreatmentmode";
 }

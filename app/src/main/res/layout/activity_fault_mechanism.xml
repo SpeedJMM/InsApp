@@ -23,14 +23,14 @@
         android:layout_weight="1"
         android:layout_marginBottom="7dp">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listview_fault_mechanism_firstlevel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:background="@color/color_eeeeee"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listview_fault_mechanism_secondlevel"
             android:layout_width="0dp"
             android:layout_height="match_parent"

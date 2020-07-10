@@ -302,34 +302,134 @@ public class AllComEqptRepairDisOrderActivity extends Fragment{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (false && loadCount % 2 != 0) {
-                            //分页数据加载失败
-                            recyclerViewHelper.loadError();
-                        } else if (loadCount < 50000) {
-                            String find_sql = "select * from " + DbConstant.USER_TABLE;
-                            db = helper.getReadableDatabase();
-                            Cursor cursor = db.rawQuery(find_sql, null);
-                            String Listeqptorder = UrlConstant.listeqptorder;
-                            String username, password;
-                            if (cursor.moveToFirst()) {
-                                username = cursor.getString(cursor.getColumnIndex("username"));
-                                password = cursor.getString(cursor.getColumnIndex("password"));
-                                Map<String, String> stringMap = new HashMap<>();
-                                stringMap.put("username", username);
-                                stringMap.put("password", password);
-                                stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
-                                stringMap.put("size", String.valueOf(loadCount));
-                                stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
-                                //Listeqptorder = UrlConstant.listeqptorder + "?username=" + username + "&password=" + password+"&starttime="+allowedSmallestTime+" 00:00:00"+"&endtime="+allowedBiggestTime+" 23:59:59"+"&size="+loadCount;
-                                VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
-                                    @Override
-                                    public void onSuccess(String result) {
-                                        EqptComDataBean eqptComOrderBean = new Gson().fromJson(result, EqptComDataBean.class);
-                                        List<EqptComOrderBean> eqptcomorder = eqptComOrderBean.getData();
-                                        if (eqptcomorder.size() > 0) {
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (false && loadCount % 2 != 0) {
+                                //分页数据加载失败
+                                recyclerViewHelper.loadError();
+                            } else if (loadCount < 50000) {
+                                String find_sql = "select * from " + DbConstant.USER_TABLE;
+                                db = helper.getReadableDatabase();
+                                Cursor cursor = db.rawQuery(find_sql, null);
+                                String Listeqptorder = UrlConstant.listeqptorder;
+                                String username, password;
+                                if (cursor.moveToFirst()) {
+                                    username = cursor.getString(cursor.getColumnIndex("username"));
+                                    password = cursor.getString(cursor.getColumnIndex("password"));
+                                    Map<String, String> stringMap = new HashMap<>();
+                                    stringMap.put("username", username);
+                                    stringMap.put("password", password);
+                                    stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
+                                    stringMap.put("size", String.valueOf(loadCount));
+                                    stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
+                                    //Listeqptorder = UrlConstant.listeqptorder + "?username=" + username + "&password=" + password+"&starttime="+allowedSmallestTime+" 00:00:00"+"&endtime="+allowedBiggestTime+" 23:59:59"+"&size="+loadCount;
+                                    VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
+                                        @Override
+                                        public void onSuccess(String result) {
+                                            EqptComDataBean eqptComOrderBean = new Gson().fromJson(result, EqptComDataBean.class);
+                                            List<EqptComOrderBean> eqptcomorder = eqptComOrderBean.getData();
+                                            if (eqptcomorder.size() > 0) {
+                                                for (EqptComOrderBean eqptcom : eqptcomorder) {
+                                                    eqptComOrderBean1 =  new EqptComOrderBean();
+                                                    String[] eqpt = eqptcom.getEqptTepairTask().split("/");
+                                                    eqptComOrderBean1.setOvepargroupname(eqptcom.getOvepargroupname());
+                                                    eqptComOrderBean1.setEqptTepairTask(eqpt[0]+eqpt[1]);
+                                                    eqptComOrderBean1.setEqptrepairdispaorderid(eqptcom.getEqptrepairdispaorderid());
+
+                                                    eqptComOrderBean1.setEqptTepairImport(eqptcom.getEqptTepairImport());
+                                                    eqptComOrderBean1.setEqptTepairTaskDes(eqptcom.getEqptTepairTaskDes());
+                                                    eqptComOrderBean1.setViDispaStaff(eqptcom.getViDispaStaff());
+                                                    eqptComOrderBean1.setDispaordercontroldispatime(eqptcom.getDispaordercontroldispatime());
+                                                    eqptComOrderBean1.setDispaorderstatecode(eqptcom.getDispaorderstatecode());
+                                                    eqptComOrderBean1.setDispaorderstatename(eqptcom.getDispaorderstatename());
+                                                    //用于完工
+                                                    eqptComOrderBean1.setDispaorderid(eqptcom.getDispaorderid());
+                                                    eqptComOrderBean1.setCompletorderid(eqptcom.getCompletorderid());
+                                                    eqptComOrderBean1.setDispaordersecdispatime(eqptcom.getDispaordersecdispatime());
+                                                    //用于二次派工
+                                                    eqptComOrderBean1.setOvepargroupid(eqptcom.getOvepargroupid());
+                                                    eqptComOrderBean1.setEqptTepairTaskDes(eqptcom.getEqptTepairTaskDes());
+                                                    //用于判断作业票
+                                                    eqptComOrderBean1.setWhetherworkticket(eqptcom.getWhetherworkticket() == null ? "否" : eqptcom.getWhetherworkticket());
+                                                    //用于完工单详情
+                                                    eqptComOrderBean1.setCompletordersubmittime(eqptcom.getCompletordersubmittime());
+
+                                                    data_list1.add(eqptComOrderBean1);
+                                                }
+                                                //listAdapter.notifyDataSetChanged();
+                                                eqptAdapter.notifyDataSetChanged();
+                                                recyclerViewHelper.loadComplete(true);
+                                            } else {
+                                                //分页数据加载成功，没有更多。即全部加载完成
+                                                recyclerViewHelper.loadComplete(false);
+                                            }
+
+                                        }
+
+                                        @Override
+                                        public void onError(VolleyError result) {
+
+                                        }
+
+                                        @Override
+                                        public void jsonOnSuccess(JSONObject result) {
+                                        }
+                                    });
+                                }
+                                db.close();
+                            } else {
+                                //分页数据加载成功，没有更多。即全部加载完成
+                                recyclerViewHelper.loadComplete(false);
+                            }
+
+                            loadCount++;
+                        }
+                    });
+                }
+
+            }
+        }).start();
+
+    }
+
+    private void initData() {
+        data_list1.clear();
+        recyclerViewHelper.loadStart();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (loadCount == 1) {
+                                String find_sql = "select * from " + DbConstant.USER_TABLE;
+                                db = helper.getReadableDatabase();
+                                Cursor cursor = db.rawQuery(find_sql, null);
+                                String Listeqptorder = UrlConstant.listeqptorder;
+                                String username, password;
+                                if (cursor.moveToFirst()) {
+                                    username = cursor.getString(cursor.getColumnIndex("username"));
+                                    password = cursor.getString(cursor.getColumnIndex("password"));
+                                    Map<String, String> stringMap = new HashMap<>();
+                                    stringMap.put("username", username);
+                                    stringMap.put("password", password);
+                                    stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
+                                    stringMap.put("size", String.valueOf(loadCount));
+                                    stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
+                                    //Listeqptorder = UrlConstant.listeqptorder + "?username=" + username + "&password=" + password+"&starttime="+allowedSmallestTime+" 00:00:00"+"&endtime="+allowedBiggestTime+" 23:59:59"+"&size="+loadCount;
+                                    VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
+                                        @Override
+                                        public void onSuccess(String result) {
+                                            EqptComDataBean eqptComOrderBean = new Gson().fromJson(result, EqptComDataBean.class);
+                                            List<EqptComOrderBean>eqptcomorder = eqptComOrderBean.getData();
                                             for (EqptComOrderBean eqptcom : eqptcomorder) {
                                                 eqptComOrderBean1 =  new EqptComOrderBean();
                                                 String[] eqpt = eqptcom.getEqptTepairTask().split("/");
@@ -360,121 +460,27 @@ public class AllComEqptRepairDisOrderActivity extends Fragment{
                                             //listAdapter.notifyDataSetChanged();
                                             eqptAdapter.notifyDataSetChanged();
                                             recyclerViewHelper.loadComplete(true);
-                                        } else {
-                                            //分页数据加载成功，没有更多。即全部加载完成
-                                            recyclerViewHelper.loadComplete(false);
+                                        }
+                                        @Override
+                                        public void onError(VolleyError result) {
                                         }
 
-                                    }
-
-                                    @Override
-                                    public void onError(VolleyError result) {
-
-                                    }
-
-                                    @Override
-                                    public void jsonOnSuccess(JSONObject result) {
-                                    }
-                                });
+                                        @Override
+                                        public void jsonOnSuccess(JSONObject result) {
+                                        }
+                                    });
+                                }
+                                db.close();
+                                //首次加载数据成功
+                            } else if (loadCount ==0) {
+                                //首次数据记载失败
+                                recyclerViewHelper.loadError();
                             }
-                            db.close();
-                        } else {
-                            //分页数据加载成功，没有更多。即全部加载完成
-                            recyclerViewHelper.loadComplete(false);
+                            loadCount++;
                         }
-
-                        loadCount++;
-                    }
-                });
-            }
-        }).start();
-
-    }
-
-    private void initData() {
-        data_list1.clear();
-        recyclerViewHelper.loadStart();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    });
                 }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (loadCount == 1) {
-                            String find_sql = "select * from " + DbConstant.USER_TABLE;
-                            db = helper.getReadableDatabase();
-                            Cursor cursor = db.rawQuery(find_sql, null);
-                            String Listeqptorder = UrlConstant.listeqptorder;
-                            String username, password;
-                            if (cursor.moveToFirst()) {
-                                username = cursor.getString(cursor.getColumnIndex("username"));
-                                password = cursor.getString(cursor.getColumnIndex("password"));
-                                Map<String, String> stringMap = new HashMap<>();
-                                stringMap.put("username", username);
-                                stringMap.put("password", password);
-                                stringMap.put("starttime", allowedSmallestTime + " 00:00:00");
-                                stringMap.put("size", String.valueOf(loadCount));
-                                stringMap.put("endtime", allowedBiggestTime + " 23:59:59");
-                                //Listeqptorder = UrlConstant.listeqptorder + "?username=" + username + "&password=" + password+"&starttime="+allowedSmallestTime+" 00:00:00"+"&endtime="+allowedBiggestTime+" 23:59:59"+"&size="+loadCount;
-                                VolleyRequest.RequestPost(Listeqptorder, "eqptcomorder", stringMap, new VolleyInterface(VolleyInterface.mListener, VolleyInterface.errorListener, VolleyInterface.jsonListener) {
-                                    @Override
-                                    public void onSuccess(String result) {
-                                        EqptComDataBean eqptComOrderBean = new Gson().fromJson(result, EqptComDataBean.class);
-                                        List<EqptComOrderBean>eqptcomorder = eqptComOrderBean.getData();
-                                        for (EqptComOrderBean eqptcom : eqptcomorder) {
-                                            eqptComOrderBean1 =  new EqptComOrderBean();
-                                            String[] eqpt = eqptcom.getEqptTepairTask().split("/");
-                                            eqptComOrderBean1.setOvepargroupname(eqptcom.getOvepargroupname());
-                                            eqptComOrderBean1.setEqptTepairTask(eqpt[0]+eqpt[1]);
-                                            eqptComOrderBean1.setEqptrepairdispaorderid(eqptcom.getEqptrepairdispaorderid());
 
-                                            eqptComOrderBean1.setEqptTepairImport(eqptcom.getEqptTepairImport());
-                                            eqptComOrderBean1.setEqptTepairTaskDes(eqptcom.getEqptTepairTaskDes());
-                                            eqptComOrderBean1.setViDispaStaff(eqptcom.getViDispaStaff());
-                                            eqptComOrderBean1.setDispaordercontroldispatime(eqptcom.getDispaordercontroldispatime());
-                                            eqptComOrderBean1.setDispaorderstatecode(eqptcom.getDispaorderstatecode());
-                                            eqptComOrderBean1.setDispaorderstatename(eqptcom.getDispaorderstatename());
-                                            //用于完工
-                                            eqptComOrderBean1.setDispaorderid(eqptcom.getDispaorderid());
-                                            eqptComOrderBean1.setCompletorderid(eqptcom.getCompletorderid());
-                                            eqptComOrderBean1.setDispaordersecdispatime(eqptcom.getDispaordersecdispatime());
-                                            //用于二次派工
-                                            eqptComOrderBean1.setOvepargroupid(eqptcom.getOvepargroupid());
-                                            eqptComOrderBean1.setEqptTepairTaskDes(eqptcom.getEqptTepairTaskDes());
-                                            //用于判断作业票
-                                            eqptComOrderBean1.setWhetherworkticket(eqptcom.getWhetherworkticket() == null ? "否" : eqptcom.getWhetherworkticket());
-                                            //用于完工单详情
-                                            eqptComOrderBean1.setCompletordersubmittime(eqptcom.getCompletordersubmittime());
-
-                                            data_list1.add(eqptComOrderBean1);
-                                        }
-                                        //listAdapter.notifyDataSetChanged();
-                                        eqptAdapter.notifyDataSetChanged();
-                                        recyclerViewHelper.loadComplete(true);
-                                    }
-                                    @Override
-                                    public void onError(VolleyError result) {
-                                    }
-
-                                    @Override
-                                    public void jsonOnSuccess(JSONObject result) {
-                                    }
-                                });
-                            }
-                            db.close();
-                            //首次加载数据成功
-                        } else if (loadCount ==0) {
-                            //首次数据记载失败
-                            recyclerViewHelper.loadError();
-                        }
-                        loadCount++;
-                    }
-                });
             }
         }).start();
     }

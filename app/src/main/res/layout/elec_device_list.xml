@@ -28,7 +28,7 @@
         android:text="设备数据分析及可靠性管理系统"
         android:layout_marginTop="8dp" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_device_list_scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
